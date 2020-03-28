@@ -175,6 +175,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
 let projectile: Sprite = null
 let Enemy_: Sprite = null
 let AaAAAAAAAAAaaaAAAAaaA: Sprite = null
+game.splash("The worst game in the world", "PineappleDEV 2020")
 color.setPalette(
 color.Arcade
 )
