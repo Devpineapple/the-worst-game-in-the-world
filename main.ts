@@ -265,22 +265,22 @@ game.onUpdate(function () {
 })
 game.onUpdateInterval(1000, function () {
     Enemy_ = sprites.create(img`
-f f f f f f f f f f f f f f f f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 f 7 7 7 7 7 7 7 7 f 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 f 7 7 7 f 7 7 7 7 f 
-f 7 7 7 7 7 f 7 7 7 f 7 7 7 7 f 
-f 7 7 7 7 7 f f f f f 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f f f f f f f f f f f f f f f f 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . f f f f f f f f f f f f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f 7 f 7 7 7 7 7 7 f 7 f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f 7 7 f 7 7 7 f 7 7 7 f . . 
+. . f 7 7 f 7 7 7 f 7 7 7 f . . 
+. . f 7 7 f f f f f 7 7 7 f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
     Enemy_.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
     info.changeScoreBy(1)
