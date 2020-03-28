@@ -95,27 +95,70 @@ f f d d d d d d d d d d d d f f
 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
 `
 }
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    AaAAAAAAAAAaaaAAAAaaA.setImage(img`
+f f f f f f f f f f f f f f f f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 f 5 5 5 5 f 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 f f f f 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f f f f f f f f f f f f f f f f 
+`)
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    AaAAAAAAAAAaaaAAAAaaA.setImage(img`
+f f f f f f f f f f f f f f f f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 f 5 5 5 5 f 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 f f f f 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f f f f f f f f f f f f f f f f 
+`)
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
-    AaAAAAAAAAAaaaAAAAaaA.setPosition(AaAAAAAAAAAaaaAAAAaaA.x, 220)
+    AaAAAAAAAAAaaaAAAAaaA.setPosition(AaAAAAAAAAAaaaAAAAaaA.x, 223)
 })
 let AaAAAAAAAAAaaaAAAAaaA: Sprite = null
+color.setPalette(
+color.Arcade
+)
 AaAAAAAAAAAaaaAAAAaaA = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . f f . . . . . . 
-. . . . . . . f f f . . . . . . 
-. . . . . . f f f f f . . . . . 
-. . . . . f f f f f f . . . . . 
-. . . . . f f . . . f f . . . . 
-. . . . f f . . . . f f . . . . 
-. . . f f f f f f f f f f . . . 
-. . . f f . . . . . . f f . . . 
-. . f f f . . . . . . f f f . . 
-. . f f . . . . . . . . f f f . 
-. f f f . . . . . . . . . f f f 
-f f f . . . . . . . . . . . . f 
+f f f f f f f f f f f f f f f f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 f 5 5 5 5 5 5 5 f 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 f f f f f f f 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
+f f f f f f f f f f f f f f f f 
 `, SpriteKind.Player)
 scene.cameraFollowSprite(AaAAAAAAAAAaaaAAAAaaA)
 tiles.setTilemap(tiles.createTilemap(
