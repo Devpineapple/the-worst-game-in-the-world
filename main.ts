@@ -1,3 +1,6 @@
+namespace SpriteKind {
+    export const Power_UP = SpriteKind.create()
+}
 namespace myTiles {
     //% blockIdentity=images._tile
     export const tile0 = img`
@@ -115,6 +118,13 @@ f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f
 f f f f f f f f f f f f f f f f 
 `)
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.disintegrate, 500)
+    sprite.destroy(effects.disintegrate, 500)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    game.over(false)
+})
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     AaAAAAAAAAAaaaAAAAaaA.setImage(img`
 f f f f f f f f f f f f f f f f 
@@ -135,9 +145,35 @@ f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f
 f f f f f f f f f f f f f f f f 
 `)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Power_UP, function (sprite, otherSprite) {
+    projectile = sprites.createProjectileFromSprite(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . f f f f f . . . . . . 
+. . . . f 2 2 2 2 2 f . . . . . 
+. . . f 2 2 2 2 2 2 2 f . . . . 
+. . . f 2 2 2 2 2 2 2 f . . . . 
+. . . f 2 2 2 2 2 2 2 f . . . . 
+. . . f 2 2 2 2 2 2 2 f . . . . 
+. . . f 2 2 2 2 2 2 2 f . . . . 
+. . . . f 2 2 2 2 2 f . . . . . 
+. . . . . f f f f f . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, AaAAAAAAAAAaaaAAAAaaA, 50, 100)
+    projectile.setKind(SpriteKind.Projectile)
+    projectile.follow(Enemy_, 100)
+    POwerup.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
     AaAAAAAAAAAaaaAAAAaaA.setPosition(AaAAAAAAAAAaaaAAAAaaA.x, 223)
 })
+let projectile: Sprite = null
+let POwerup: Sprite = null
+let Enemy_: Sprite = null
 let AaAAAAAAAAAaaaAAAAaaA: Sprite = null
 color.setPalette(
 color.Arcade
@@ -186,3 +222,66 @@ tiles.setTilemap(tiles.createTilemap(
         ))
 AaAAAAAAAAAaaaAAAAaaA.setPosition(10, 223)
 controller.moveSprite(AaAAAAAAAAAaaaAAAAaaA, 100, 100)
+Enemy_ = sprites.create(img`
+f f f f f f f f f f f f f f f f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 f 2 2 2 2 2 2 2 2 f 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 f 2 2 2 f 2 2 2 2 f 
+f 2 2 2 2 2 f 2 2 2 f 2 2 2 2 f 
+f 2 2 2 2 2 f f f f f 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f f f f f f f f f f f f f f f f 
+`, SpriteKind.Enemy)
+POwerup = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . f f f f f f f f f f f f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 f f f f f f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f f f f f f 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Power_UP)
+Enemy_.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
+POwerup.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
+game.onUpdate(function () {
+    Enemy_.follow(AaAAAAAAAAAaaaAAAAaaA, 50)
+})
+game.onUpdateInterval(1000, function () {
+    Enemy_ = sprites.create(img`
+f f f f f f f f f f f f f f f f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 f 2 2 2 2 2 2 2 2 f 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 f 2 2 2 f 2 2 2 2 f 
+f 2 2 2 2 2 f 2 2 2 f 2 2 2 2 f 
+f 2 2 2 2 2 f f f f f 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f 2 2 2 2 2 2 2 2 2 2 2 2 2 2 f 
+f f f f f f f f f f f f f f f f 
+`, SpriteKind.Enemy)
+    Enemy_.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
+    info.changeScoreBy(1)
+})
