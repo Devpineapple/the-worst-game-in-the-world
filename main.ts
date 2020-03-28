@@ -223,22 +223,22 @@ tiles.setTilemap(tiles.createTilemap(
 AaAAAAAAAAAaaaAAAAaaA.setPosition(10, 223)
 controller.moveSprite(AaAAAAAAAAAaaaAAAAaaA, 100, 100)
 Enemy_ = sprites.create(img`
-f f f f f f f f f f f f f f f f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 f 7 7 7 7 7 7 7 7 f 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 f 7 7 7 f 7 7 7 7 f 
-f 7 7 7 7 7 f 7 7 7 f 7 7 7 7 f 
-f 7 7 7 7 7 f f f f f 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
-f f f f f f f f f f f f f f f f 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . f f f f f f f f f f f f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f 7 f 7 7 7 7 7 7 f 7 f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f 7 7 f 7 7 7 f 7 7 7 f . . 
+. . f 7 7 f 7 7 7 f 7 7 7 f . . 
+. . f 7 7 f f f f f 7 7 7 f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
 POwerup = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -261,7 +261,7 @@ POwerup = sprites.create(img`
 Enemy_.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
 POwerup.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
 game.onUpdate(function () {
-    Enemy_.follow(AaAAAAAAAAAaaaAAAAaaA, 50)
+    Enemy_.follow(AaAAAAAAAAAaaaAAAAaaA, 40)
 })
 game.onUpdateInterval(1000, function () {
     Enemy_ = sprites.create(img`
