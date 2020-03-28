@@ -258,12 +258,81 @@ POwerup = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Power_UP)
+POwerup = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . f f f f f f f f f f f f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 f f f f f f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f f f f f f 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Power_UP)
+POwerup = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . f f f f f f f f f f f f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 f f f f f f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f f f f f f 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Power_UP)
+POwerup = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . f f f f f f f f f f f f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 f f f f f f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f f f f f f 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Power_UP)
+POwerup = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . f f f f f f f f f f f f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 f f f f f f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f f f f f f 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Power_UP)
 Enemy_.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
 POwerup.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
-game.onUpdate(function () {
-    Enemy_.follow(AaAAAAAAAAAaaaAAAAaaA, 40)
-})
-game.onUpdateInterval(1000, function () {
+game.onUpdateInterval(2000, function () {
     Enemy_ = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -284,4 +353,7 @@ game.onUpdateInterval(1000, function () {
 `, SpriteKind.Enemy)
     Enemy_.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
     info.changeScoreBy(1)
+})
+game.onUpdate(function () {
+    Enemy_.follow(AaAAAAAAAAAaaaAAAAaaA, 40)
 })
