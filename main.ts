@@ -164,15 +164,15 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Power_UP, function (sprite, othe
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, AaAAAAAAAAAaaaAAAAaaA, 50, 100)
+    projectile.setFlag(SpriteFlag.StayInScreen, true)
     projectile.setKind(SpriteKind.Projectile)
     projectile.follow(Enemy_, 100)
-    POwerup.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
+    otherSprite.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
     AaAAAAAAAAAaaaAAAAaaA.setPosition(AaAAAAAAAAAaaaAAAAaaA.x, 223)
 })
 let projectile: Sprite = null
-let POwerup: Sprite = null
 let Enemy_: Sprite = null
 let AaAAAAAAAAAaaaAAAAaaA: Sprite = null
 color.setPalette(
@@ -240,7 +240,7 @@ Enemy_ = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
-POwerup = sprites.create(img`
+let POwerup = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . f f f f f f f f f f f f . . 
 . . f 4 4 4 4 4 4 4 4 4 4 f . . 
@@ -258,7 +258,7 @@ POwerup = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Power_UP)
-POwerup = sprites.create(img`
+let POWERUP2 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . f f f f f f f f f f f f . . 
 . . f 4 4 4 4 4 4 4 4 4 4 f . . 
@@ -276,7 +276,7 @@ POwerup = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Power_UP)
-POwerup = sprites.create(img`
+let Powerup3 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . f f f f f f f f f f f f . . 
 . . f 4 4 4 4 4 4 4 4 4 4 f . . 
@@ -294,25 +294,7 @@ POwerup = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Power_UP)
-POwerup = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . f f f f f f f f f f f f . . 
-. . f 4 4 4 4 4 4 4 4 4 4 f . . 
-. . f 4 4 f f f f f f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f f f f f f 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 4 4 4 4 4 4 4 4 4 f . . 
-. . f f f f f f f f f f f f . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Power_UP)
-POwerup = sprites.create(img`
+let Powerup4 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . f f f f f f f f f f f f . . 
 . . f 4 4 4 4 4 4 4 4 4 4 f . . 
@@ -332,6 +314,9 @@ POwerup = sprites.create(img`
 `, SpriteKind.Power_UP)
 Enemy_.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
 POwerup.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
+POWERUP2.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
+Powerup3.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
+Powerup4.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
 game.onUpdateInterval(2000, function () {
     Enemy_ = sprites.create(img`
 . . . . . . . . . . . . . . . . 
