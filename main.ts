@@ -98,6 +98,157 @@ f f d d d d d d d d d d d d f f
 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
 `
 }
+function Move_Player () {
+    AaAAAAAAAAAaaaAAAAaaA.setPosition(10, 223)
+    controller.moveSprite(AaAAAAAAAAAaaaAAAAaaA, 100, 100)
+}
+function Spawn_enemy () {
+    Enemy_ = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . f f f f f f f f f f f f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f 7 f 7 7 7 7 7 7 f 7 f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f 7 7 f 7 7 7 f 7 7 7 f . . 
+. . f 7 7 f 7 7 7 f 7 7 7 f . . 
+. . f 7 7 f f f f f 7 7 7 f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f 7 7 7 7 7 7 7 7 7 7 f . . 
+. . f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Enemy)
+    POwerup = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . f f f f f f f f f f f f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 f f f f f f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f f f f f f 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Power_UP)
+    POWERUP2 = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . f f f f f f f f f f f f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 f f f f f f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f f f f f f 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Power_UP)
+    Powerup3 = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . f f f f f f f f f f f f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 f f f f f f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f f f f f f 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Power_UP)
+    Powerup4 = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . f f f f f f f f f f f f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 f f f f f f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f 4 4 4 4 4 f 4 4 f . . 
+. . f 4 f f f f f f 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 f 4 4 4 4 4 4 4 4 f . . 
+. . f 4 4 4 4 4 4 4 4 4 4 f . . 
+. . f f f f f f f f f f f f . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Power_UP)
+    Enemy_.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
+    POwerup.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
+    POWERUP2.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
+    Powerup3.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
+    Powerup4.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
+}
+function Load_Game () {
+    color.setPalette(
+    color.Arcade
+    )
+    AaAAAAAAAAAaaaAAAAaaA = sprites.create(img`
+f f f f f f f f f f f f f f f f 
+f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+f 4 4 4 f 4 4 4 4 4 4 4 f 4 4 f 
+f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+f 4 4 4 4 f f f f f f f 4 4 4 f 
+f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
+f f f f f f f f f f f f f f f f 
+`, SpriteKind.Player)
+    scene.cameraFollowSprite(AaAAAAAAAAAaaaAAAAaaA)
+    tiles.setTilemap(tiles.createTilemap(
+            hex`1000100001010101010101010101010101010101010101010101010401010101040101010101040101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010104010101010101010104010104010101010101010101040101010101010101010101010101010101010101010101010101010401010101010104010101010101010101010101010101010101010101010101010101040101010101010101010101010101010101010101010104010101010104010101010101010101010101010101010101010101010101010101010202020202020202020202020202020203030303030303030303030303030303`,
+            img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`,
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4],
+            TileScale.Sixteen
+        ))
+}
+function Spawn_Powerups () {
+	
+}
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     AaAAAAAAAAAaaaAAAAaaA.setImage(img`
 f f f f f f f f f f f f f f f f 
@@ -121,6 +272,7 @@ f f f f f f f f f f f f f f f f
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy(effects.disintegrate, 500)
     sprite.destroy(effects.disintegrate, 500)
+    music.baDing.play()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.over(false)
@@ -146,6 +298,7 @@ f f f f f f f f f f f f f f f f
 `)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Power_UP, function (sprite, otherSprite) {
+    music.pewPew.play()
     projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -173,151 +326,17 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
     AaAAAAAAAAAaaaAAAAaaA.setPosition(AaAAAAAAAAAaaaAAAAaaA.x, 223)
 })
 let projectile: Sprite = null
+let Powerup4: Sprite = null
+let Powerup3: Sprite = null
+let POWERUP2: Sprite = null
+let POwerup: Sprite = null
 let Enemy_: Sprite = null
 let AaAAAAAAAAAaaaAAAAaaA: Sprite = null
 game.splash("The worst game in the world", "PineappleDEV 2020")
-color.setPalette(
-color.Arcade
-)
-AaAAAAAAAAAaaaAAAAaaA = sprites.create(img`
-f f f f f f f f f f f f f f f f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 f 4 4 4 4 4 4 4 f 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 f f f f f f f 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 4 f 
-f f f f f f f f f f f f f f f f 
-`, SpriteKind.Player)
-scene.cameraFollowSprite(AaAAAAAAAAAaaaAAAAaaA)
-tiles.setTilemap(tiles.createTilemap(
-            hex`1000100001010101010101010101010101010101010101010101010401010101040101010101040101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010104010101010101010104010104010101010101010101040101010101010101010101010101010101010101010101010101010401010101010104010101010101010101010101010101010101010101010101010101040101010101010101010101010101010101010101010104010101010104010101010101010101010101010101010101010101010101010101010202020202020202020202020202020203030303030303030303030303030303`,
-            img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4],
-            TileScale.Sixteen
-        ))
-AaAAAAAAAAAaaaAAAAaaA.setPosition(10, 223)
-controller.moveSprite(AaAAAAAAAAAaaaAAAAaaA, 100, 100)
-Enemy_ = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . f f f f f f f f f f f f . . 
-. . f 7 7 7 7 7 7 7 7 7 7 f . . 
-. . f 7 7 7 7 7 7 7 7 7 7 f . . 
-. . f 7 f 7 7 7 7 7 7 f 7 f . . 
-. . f 7 7 7 7 7 7 7 7 7 7 f . . 
-. . f 7 7 f 7 7 7 f 7 7 7 f . . 
-. . f 7 7 f 7 7 7 f 7 7 7 f . . 
-. . f 7 7 f f f f f 7 7 7 f . . 
-. . f 7 7 7 7 7 7 7 7 7 7 f . . 
-. . f 7 7 7 7 7 7 7 7 7 7 f . . 
-. . f f f f f f f f f f f f . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
-let POwerup = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . f f f f f f f f f f f f . . 
-. . f 4 4 4 4 4 4 4 4 4 4 f . . 
-. . f 4 4 f f f f f f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f f f f f f 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 4 4 4 4 4 4 4 4 4 f . . 
-. . f f f f f f f f f f f f . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Power_UP)
-let POWERUP2 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . f f f f f f f f f f f f . . 
-. . f 4 4 4 4 4 4 4 4 4 4 f . . 
-. . f 4 4 f f f f f f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f f f f f f 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 4 4 4 4 4 4 4 4 4 f . . 
-. . f f f f f f f f f f f f . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Power_UP)
-let Powerup3 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . f f f f f f f f f f f f . . 
-. . f 4 4 4 4 4 4 4 4 4 4 f . . 
-. . f 4 4 f f f f f f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f f f f f f 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 4 4 4 4 4 4 4 4 4 f . . 
-. . f f f f f f f f f f f f . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Power_UP)
-let Powerup4 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . f f f f f f f f f f f f . . 
-. . f 4 4 4 4 4 4 4 4 4 4 f . . 
-. . f 4 4 f f f f f f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f 4 4 4 4 4 f 4 4 f . . 
-. . f 4 f f f f f f 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 f 4 4 4 4 4 4 4 4 f . . 
-. . f 4 4 4 4 4 4 4 4 4 4 f . . 
-. . f f f f f f f f f f f f . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Power_UP)
-Enemy_.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
-POwerup.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
-POWERUP2.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
-Powerup3.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
-Powerup4.setPosition(Math.randomRange(10, 160), Math.randomRange(10, 220))
+Load_Game()
+Move_Player()
+Spawn_enemy()
+Spawn_Powerups()
 game.onUpdateInterval(2000, function () {
     Enemy_ = sprites.create(img`
 . . . . . . . . . . . . . . . . 
